@@ -2,6 +2,7 @@ import express from "express";
 import { errorHandler } from './middleware/err.middleware';
 import healthRouter from './routes/healthRouter'
 import userRouter from './routes/user.routes'
+import redisRouter from './routes/redisRoute'
 import cors from "cors";
 import { AppError } from "./utils/AppError";
 import { asyncHandler } from "./utils/AsyncHandler";
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/health",healthRouter)
 app.use("/user",userRouter);
+app.use("/redis-test",redisRouter);
 
 
 
